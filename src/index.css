@@ -150,8 +150,8 @@ body,
 }
 
 .heart-icon {
-  color: #fd4d3f;
   margin-right: 5px;
+  height: 15px;
 }
 
 .spinner {

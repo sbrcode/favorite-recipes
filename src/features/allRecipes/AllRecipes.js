@@ -5,8 +5,7 @@ import FavoriteButton from "../../components/FavoriteButton";
 import Recipe from "../../components/Recipe";
 import { addRecipe } from '../favoriteRecipes/favoriteRecipesSlice.js';
 import { loadData } from './allRecipesSlice';
-
-const favoriteIconURL = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/favorite.svg'
+import mdiHeartPlus from '../../assets/heart-plus.png'; 
 
 export const AllRecipes = (props) => {
   
@@ -27,7 +26,7 @@ export const AllRecipes = (props) => {
         <Recipe recipe={recipe} key={recipe.id}>
           <FavoriteButton
             onClickHandler={() => onAddRecipeHandler(recipe)}
-            icon={favoriteIconURL}
+            icon={mdiHeartPlus}
           >
             Add to Favorites
           </FavoriteButton>

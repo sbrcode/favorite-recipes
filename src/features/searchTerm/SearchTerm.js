@@ -1,8 +1,7 @@
 import React from 'react';
 import { setSearchTerm, clearSearchTerm } from './searchTermSlice.js';
-
-const searchIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/search.svg'
-const clearIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/clear.svg'
+import magnify from '../../assets/magnify.png'; 
+import close from '../../assets/close.png'; 
 
 export const SearchTerm = (props) => {
   
@@ -19,7 +18,7 @@ export const SearchTerm = (props) => {
 
   return (
     <div id="search-container">
-      <img id="search-icon" alt="" src={searchIconUrl} />
+      <img id="search-icon" alt="" src={magnify} />
       <input
         id="search"
         type="text"
@@ -33,7 +32,7 @@ export const SearchTerm = (props) => {
           type="button"
           id="search-clear-button"
         >
-          <img src={clearIconUrl} alt="" />
+          <img src={close} alt="" />
         </button>
       )}
     </div>
