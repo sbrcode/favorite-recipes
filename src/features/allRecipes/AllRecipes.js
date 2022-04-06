@@ -1,9 +1,10 @@
-import { addRecipe } from '../favoriteRecipes/favoriteRecipesSlice.js';
-import { loadData } from './allRecipesSlice'
-
 import React, { useEffect } from 'react';
+import '../../index.css';
+
 import FavoriteButton from "../../components/FavoriteButton";
 import Recipe from "../../components/Recipe";
+import { addRecipe } from '../favoriteRecipes/favoriteRecipesSlice.js';
+import { loadData } from './allRecipesSlice';
 
 const favoriteIconURL = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/favorite.svg'
 

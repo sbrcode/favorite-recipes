@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../index.css';
 import FavoriteButton from "../../components/FavoriteButton";
 import Recipe from "../../components/Recipe";
 
