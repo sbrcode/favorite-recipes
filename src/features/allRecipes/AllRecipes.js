@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
-import '../../index.css';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { addRecipe } from '../favoriteRecipes/favoriteRecipesSlice.js';
+import { loadData, selectFilteredAllRecipes } from './allRecipesSlice';
 import FavoriteButton from "../../components/FavoriteButton";
 import Recipe from "../../components/Recipe";
-import { addRecipe } from '../favoriteRecipes/favoriteRecipesSlice.js';
-import { loadData } from './allRecipesSlice';
 import mdiHeartPlus from '../../assets/heart-plus.png'; 
+import '../../index.css';
 
-export const AllRecipes = (props) => {
-  
-  const { allRecipes, dispatch } = props;
+export const AllRecipes = () => {
+  const allRecipes = useSelector(selectFilteredAllRecipes);
+  const dispatch = useDispatch();
 
-  const onFirstRender = () => {
-    dispatch(loadData());
-  }
-  useEffect(onFirstRender, [])
+  useEffect(() => {
+    dispatch(loadData())
+  }, [dispatch])
   
   const onAddRecipeHandler = (recipe) => {
     dispatch(addRecipe(recipe));

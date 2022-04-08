@@ -1,4 +1,5 @@
 import allRecipesData from '../../api/data.js'
+import { selectSearchTerm } from '../searchTerm/searchTermSlice.js';
 
 export const loadData = () => {
   return {
@@ -20,3 +21,14 @@ export const allRecipesReducer = (allRecipes = initialState, action) => {
       return allRecipes;
   }
 }
+
+export const selectAllRecipes = (state) => state.allRecipes;
+
+export const selectFilteredAllRecipes = (state) => {
+  const allRecipes = selectAllRecipes(state);
+  const searchTerm = selectSearchTerm(state);
+
+  return allRecipes.filter((recipe) =>
+    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+};
